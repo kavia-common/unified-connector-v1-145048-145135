@@ -24,3 +24,12 @@ body {
 body {
   font-family: system-ui, -apple-system, sans-serif;
 }
+
+/* Utility helpers */
+.container {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
