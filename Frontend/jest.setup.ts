@@ -1,5 +1,18 @@
 import '@testing-library/jest-dom';
 
+// Ensure the public API base URL is defined for tests
+process.env.NEXT_PUBLIC_API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost';
+
+// Ensure global.fetch is a jest mock function for tests
+if (typeof global.fetch === 'undefined') {
+  // @ts-ignore
+  global.fetch = jest.fn();
+} else if (typeof global.fetch !== 'function' || // @ts-ignore
+           (global.fetch as any)._isMockFunction !== true) {
+  // @ts-ignore
+  global.fetch = jest.fn();
+}
+
 // JSDOM already has fetch in newer environments; if not, provide a simple polyfill
 if (!(globalThis as any).fetch) {
   const maybeJest = (globalThis as any).jest;
