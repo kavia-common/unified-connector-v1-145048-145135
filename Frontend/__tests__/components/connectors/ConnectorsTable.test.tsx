@@ -1,4 +1,4 @@
-import { render, screen, waitFor, fireEvent } from '@/src/test-utils';
+import { render, screen, waitFor, fireEvent } from '@/test-utils';
 import ConnectorsTable from '@/components/connectors/ConnectorsTable';
 import { api } from '@/lib/api/client';
 
