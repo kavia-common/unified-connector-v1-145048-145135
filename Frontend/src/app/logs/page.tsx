@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import LogsViewer from "@/components/LogsViewer";
 
 export default function LogsPage() {
@@ -7,9 +8,10 @@ export default function LogsPage() {
     <div className="space-y-6">
       <header>
         <h1 className="text-2xl font-semibold">Logs</h1>
-        <p className="text-gray-600 text-sm">Live and recent logs from the connector</p>
+        <p className="text-gray-600 text-sm">Recent connector logs</p>
       </header>
-      <LogsViewer initialLimit={100} pollMs={5000} />
+
+      <LogsViewer initialLimit={100} pollMs={7000} />
     </div>
   );
 }

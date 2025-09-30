@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { listServices, startService, stopService } from "@/lib/api/endpoints";
 import type { ConnectorService } from "@/lib/types";
 import StatusBadge from "@/components/StatusBadge";
@@ -17,7 +17,7 @@ export default function ServicesPage() {
     return fallback;
   };
 
-  const refresh = async () => {
+  const refresh = useCallback(async () => {
     setError(null);
     try {
       setLoading(true);
@@ -28,11 +28,11 @@ export default function ServicesPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     refresh();
-  }, []);
+  }, [refresh]);
 
   const handleStart = async (id: string) => {
     setBusy(id);

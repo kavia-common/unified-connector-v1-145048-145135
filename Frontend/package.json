@@ -1,7 +1,8 @@
 {
-  "name": "nextjs",
+  "name": "unified-connector-frontend",
   "version": "0.1.0",
   "private": true,
+  "description": "Unified Connector v1 Frontend - Next.js UI for management and monitoring.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -23,5 +24,8 @@
     "eslint": "^9",
     "eslint-config-next": "15.2.1",
     "@eslint/eslintrc": "^3"
+  },
+  "engines": {
+    "node": ">=18.18.0"
   }
 }
